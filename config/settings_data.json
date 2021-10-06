@@ -2,11 +2,11 @@
   "current": {
     "colors_solid_button_labels": "#fafafa",
     "colors_accent_1": "#dc780b",
-    "colors_accent_2": "#dc780b",
+    "colors_accent_2": "#252525",
     "colors_text": "#150c01",
-    "colors_outline_button_labels": "#121212",
+    "colors_outline_button_labels": "#dc780b",
     "colors_background_1": "#ffffff",
-    "colors_background_2": "#f3f3f3",
+    "colors_background_2": "#fbf1e7",
     "type_header_font": "roboto_n4",
     "type_body_font": "roboto_n4",
     "page_width": "1600",
@@ -21,6 +21,7 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Welcome to our store",
               "color_scheme": "background-1",
@@ -38,10 +39,11 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo_width": 100,
+          "logo": "shopify:\/\/shop_images\/food-icon.png",
+          "logo_width": 50,
           "logo_position": "middle-left",
           "menu": "main-menu",
-          "show_line_separator": true,
+          "show_line_separator": false,
           "enable_sticky_header": true
         }
       },
@@ -52,27 +54,27 @@
             "type": "text",
             "settings": {
               "heading": "Heading",
-              "subtext": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
+              "subtext": "<p><a href=\"https:\/\/www.company name.com\" target=\"_blank\" title=\"https:\/\/www.company name.com\">www.company name.com<\/a><\/p>"
             }
           },
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
+              "heading": "Home",
+              "menu": "footer-home"
             }
           },
           "97816c6d-0c7b-42a5-88c7-c0494d4510e3": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
+              "heading": "Menu",
+              "menu": "main-menu"
             }
           },
           "8bd49e15-c813-47ee-8532-a3e533385f83": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
+              "heading": "Company",
               "menu": "footer"
             }
           }
@@ -84,13 +86,13 @@
           "8bd49e15-c813-47ee-8532-a3e533385f83"
         ],
         "settings": {
-          "color_scheme": "background-1",
-          "newsletter_enable": true,
+          "color_scheme": "accent-2",
+          "newsletter_enable": false,
           "newsletter_heading": "Subscribe to our emails",
-          "show_social": false,
-          "enable_country_selector": true,
-          "enable_language_selector": true,
-          "payment_enable": true
+          "show_social": true,
+          "enable_country_selector": false,
+          "enable_language_selector": false,
+          "payment_enable": false
         }
       }
     },
