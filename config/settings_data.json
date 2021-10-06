@@ -1,14 +1,20 @@
 {
   "current": {
-    "colors_solid_button_labels": "#FFFFFF",
-    "colors_accent_1": "#121212",
-    "colors_accent_2": "#334FB4",
-    "colors_text": "#121212",
+    "colors_solid_button_labels": "#fafafa",
+    "colors_accent_1": "#dc780b",
+    "colors_accent_2": "#dc780b",
+    "colors_text": "#150c01",
     "colors_outline_button_labels": "#121212",
-    "colors_background_1": "#FFFFFF",
-    "colors_background_2": "#F3F3F3",
-    "type_header_font": "assistant_n4",
-    "type_body_font": "assistant_n4",
+    "colors_background_1": "#ffffff",
+    "colors_background_2": "#f3f3f3",
+    "type_header_font": "roboto_n4",
+    "type_body_font": "roboto_n4",
+    "page_width": "1600",
+    "social_twitter_link": "https:\/\/twitter.com\/shopify",
+    "social_facebook_link": "https:\/\/facebook.com\/shopify",
+    "social_instagram_link": "http:\/\/instagram.com\/shopify",
+    "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
+    "favicon": "shopify:\/\/shop_images\/food-icon.png",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -16,7 +22,9 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "color_scheme": "background-1"
+              "text": "Welcome to our store",
+              "color_scheme": "background-1",
+              "link": ""
             }
           }
         },
@@ -25,8 +33,70 @@
         ],
         "settings": {
         }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "color_scheme": "background-1",
+          "logo_width": 100,
+          "logo_position": "middle-left",
+          "menu": "main-menu",
+          "show_line_separator": true,
+          "enable_sticky_header": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-1": {
+            "type": "text",
+            "settings": {
+              "heading": "Heading",
+              "subtext": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
+            }
+          },
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer"
+            }
+          },
+          "97816c6d-0c7b-42a5-88c7-c0494d4510e3": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer"
+            }
+          },
+          "8bd49e15-c813-47ee-8532-a3e533385f83": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "footer-1",
+          "footer-0",
+          "97816c6d-0c7b-42a5-88c7-c0494d4510e3",
+          "8bd49e15-c813-47ee-8532-a3e533385f83"
+        ],
+        "settings": {
+          "color_scheme": "background-1",
+          "newsletter_enable": true,
+          "newsletter_heading": "Subscribe to our emails",
+          "show_social": false,
+          "enable_country_selector": true,
+          "enable_language_selector": true,
+          "payment_enable": true
+        }
       }
-    }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
