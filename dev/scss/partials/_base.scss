@@ -1,9 +1,45 @@
-html {
-  height: 100%;
+@font-face {
+  font-family: "Philosopher";
+  src: url("Philosopher-Bold.woff2") format("woff2"),
+    url("Philosopher-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
 }
 
-body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  min-height: 100%;
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("Roboto-Medium.woff2") format("woff2"),
+    url("Roboto-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("Roboto-Regular.woff2") format("woff2"),
+    url("Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2,
+.h2,
+.h1 {
+  font-family: "Roboto-Medium", sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  color: #e7a154;
+}
+
+h3,
+.h3 {
+  font-family: "Philosopher", sans-serif;
+  font-size: 31px;
+  line-height: 35px;
+}
+
+p {
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
 }
