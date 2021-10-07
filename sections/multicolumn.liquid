@@ -8,6 +8,11 @@
       <h2 class="title">
         {{ section.settings.title | escape }}
       </h2>
+      {% if section.settings.subheading %}
+        <p class="h3 section-subheading">
+          {{ section.settings.subheading | escape }}
+        </p>
+      {% endif %}
       {%- if section.settings.button_label != blank and section.settings.swipe_on_mobile -%}
         <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">{{ section.settings.button_label | escape }}</a>
       {%- endif -%}
@@ -36,6 +41,12 @@
                   <div class="media media--transparent media--{{ section.settings.image_ratio }}"
                     {% if section.settings.image_ratio == 'adapt' %}
                       style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+                      {% elsif section.settings.image_ratio == 'icon' %}
+                      style="padding-bottom: 88px;
+                             background: {{ block.settings.background_color }};
+                             border-radius: 50%;
+                             width: 88px;
+                             margin: 0 auto;"
                     {% endif %}>
                     <img
                       srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | img_url: '275x' }} 275w,{%- endif -%}
@@ -100,8 +111,14 @@
     {
       "type": "text",
       "id": "title",
-      "default": "Multicolumn",
+      "default": "Features",
       "label": "t:sections.multicolumn.settings.title.label"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "Food with a New Passion",
+      "label": "Section subheading"
     },
     {
       "type": "select",
@@ -142,9 +159,13 @@
         {
           "value": "circle",
           "label": "t:sections.multicolumn.settings.image_ratio.options__4.label"
+        },
+        {
+          "value": "icon",
+          "label": "Icons"
         }
       ],
-      "default": "adapt",
+      "default": "icon",
       "label": "t:sections.multicolumn.settings.image_ratio.label"
     },
     {
@@ -222,6 +243,12 @@
           "id": "text",
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
           "label": "t:sections.multicolumn.blocks.column.settings.text.label"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color for icons",
+          "default": "#f4f6eb"
         }
       ]
     }
