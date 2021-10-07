@@ -45,7 +45,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Group_94.png",
             "title": "Quality Food",
-            "text": "<p>It can be a very secure path to earn good money and make you very successful creative entrepreneur.<\/p>"
+            "text": "<p>It can be a very secure path to earn good money and make you very successful creative entrepreneur.<\/p>",
+            "background_color": "#f4f6eb"
           }
         },
         "column2": {
@@ -53,7 +54,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Group.png",
             "title": "Food Delivery",
-            "text": "<p>It can be a very secure path to earn good money and make you very successful creative entrepreneur.<\/p>"
+            "text": "<p>It can be a very secure path to earn good money and make you very successful creative entrepreneur.<\/p>",
+            "background_color": "#f4f6eb"
           }
         },
         "column3": {
@@ -61,7 +63,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Group_93.png",
             "title": "Super Taste",
-            "text": "<p>It can be a very secure path to earn good money and make you very successful creative entrepreneur.<\/p>"
+            "text": "<p>It can be a very secure path to earn good money and make you very successful creative entrepreneur.<\/p>",
+            "background_color": "#DC780B"
           }
         }
       },
@@ -72,8 +75,9 @@
       ],
       "settings": {
         "title": "Food with a New Passion",
+        "subheading": "Food with a New Passion",
         "image_width": "third",
-        "image_ratio": "adapt",
+        "image_ratio": "icon",
         "column_alignment": "center",
         "background_style": "none",
         "button_label": "",
