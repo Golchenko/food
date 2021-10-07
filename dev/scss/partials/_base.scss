@@ -31,6 +31,21 @@ h2,
   color: $color-heading;
 }
 
+h2.banner__heading {
+  margin-bottom: 0;
+  font-family: "Philosopher", sans-serif;
+  color: var(--color-foreground);
+  font-size: 4.6rem;
+  line-height: 6rem;
+}
+
+@media screen and (max-width: 749px) {
+  h2.banner__heading {
+    font-size: 3.6rem;
+    line-height: 5rem;
+  }
+}
+
 h3,
 .h3 {
   font-family: "Philosopher", sans-serif;

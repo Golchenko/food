@@ -256,8 +256,8 @@ body,
 .color-inverse,
 .color-accent-1,
 .color-accent-2 {
-  color: rgba(var(--color-foreground), 0.75);
-  background-color: rgb(var(--color-background));
+  color: rgba(var(--color-foreground));
+  background-color: rgb(var(--color-background), 0.7);
 }
 
 .background-secondary {
@@ -1919,10 +1919,10 @@ input[type='checkbox'] {
   color: rgba(var(--color-foreground), 0.75);
 }
 
-.header__heading-logo {
+/* .header__heading-logo {
   height: auto;
   width: 100%;
-}
+} */
 
 @media screen and (min-width: 990px) {
   .header__heading-link {
