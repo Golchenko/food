@@ -307,12 +307,3 @@
   word-wrap: break-word;
 }
 
-.btn-card .button {
-  padding: 0.5rem 1rem 0.5rem;
-  min-width: 10rem;
-  min-height: 3rem;
-  font-size: 1rem;
-  letter-spacing: 0.1rem;
-  line-height: 1;
-}
-

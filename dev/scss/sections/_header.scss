@@ -4,6 +4,16 @@
   background-color: $color-white;
   .btn-card {
     text-decoration: none;
+    @media screen and (max-width: 749px) {
+      .button {
+        padding: 0.5rem 1rem 0.5rem;
+        min-width: 10rem;
+        min-height: 3rem;
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        line-height: 1;
+      }
+    }
   }
   .header__active-menu-item,
   .header__menu-item:hover {
