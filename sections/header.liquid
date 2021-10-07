@@ -356,7 +356,6 @@
                   <details>
                     <summary class="header__menu-item list-menu__item link focus-inset">
                       <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
-                      {% render 'icon-caret' %}
                     </summary>
                     <ul class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce" role="list" tabindex="-1">
                       {%- for childlink in link.links -%}
@@ -369,7 +368,6 @@
                             <details>
                               <summary class="header__menu-item link link--text list-menu__item focus-inset caption-large">
                                 {{ childlink.title | escape }}
-                                {% render 'icon-caret' %}
                               </summary>
                               <ul class="header__submenu list-menu motion-reduce">
                                 {%- for grandchildlink in childlink.links -%}
@@ -399,6 +397,9 @@
     {%- endif -%}
 
     <div class="header__icons">
+
+      {% unless section.settings.disable_search %}
+
       <details-modal class="header__search">
         <details>
           <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
@@ -472,6 +473,8 @@
         </details>
       </details-modal>
 
+      {% endunless %}
+
       {%- if shop.customer_accounts_enabled -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
           {% render 'icon-account' %}
@@ -487,14 +490,8 @@
         </a>
       {%- endif -%}
 
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-        {%- liquid
-          if cart == empty
-            render 'icon-cart-empty'
-          else
-            render 'icon-cart'
-          endif
-        -%}
+      <a href="{{ routes.cart_url }}" class="btn-card focus-inset" id="cart-icon-bubble">
+        <span class="button button--primary">Booking now</span>
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
@@ -598,6 +595,7 @@
   }
 
   customElements.define('sticky-header', StickyHeader);
+
 {% endjavascript %}
 
 <script type="application/ld+json">
@@ -717,7 +715,7 @@
     {
       "type": "checkbox",
       "id": "show_line_separator",
-      "default": true,
+      "default": false,
       "label": "t:sections.header.settings.show_line_separator.label"
     },
     {
@@ -726,6 +724,12 @@
       "default": true,
       "label": "t:sections.header.settings.enable_sticky_header.label",
       "info": "t:sections.header.settings.enable_sticky_header.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_search",
+      "default": true,
+      "label": "disable header serch button"
     }
   ]
 }

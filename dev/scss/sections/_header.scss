@@ -1,0 +1,41 @@
+// --- header--- //
+
+.header {
+  background-color: $color-white;
+  .btn-card {
+    text-decoration: none;
+  }
+  .header__active-menu-item,
+  .header__menu-item:hover {
+    color: $color-orange;
+  }
+  .header__menu-item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .header__submenu.list-menu {
+    background: $color-white;
+    box-shadow: 0px 1px 28px 1px rgba(227, 227, 225, 0.6);
+    border-radius: 13px;
+    border: none;
+    padding: 2px 25px 10px 15px;
+    width: auto;
+    top: 0;
+    left: 5px;
+    .header__menu-item {
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      &:hover::before {
+        position: absolute;
+        content: "";
+        left: -15px;
+        top: 8px;
+        width: 2px;
+        height: 22px;
+        border-radius: 11px;
+        background-color: $color-orange;
+      }
+    }
+  }
+}
