@@ -55,7 +55,7 @@
             "image": "shopify:\/\/shop_images\/Group.png",
             "title": "Food Delivery",
             "text": "<p>It can be a very secure path to earn good money and make you very successful creative entrepreneur.<\/p>",
-            "background_color": "#fbf1e7"
+            "background_color": "#f4f6eb"
           }
         },
         "column3": {
@@ -91,7 +91,8 @@
         "163351198422092d5c-0": {
           "type": "heading",
           "settings": {
-            "heading": "Food Stalls with Persons but  to  Product marketing plane catlogues etc to."
+            "heading": "Food Stalls with Persons but  to  Product marketing plane catlogues etc to.",
+            "sub_heading": "Food Stalls with Persons but  to  Product marketing plane catlogues etc to."
           }
         },
         "163351198422092d5c-1": {
@@ -124,8 +125,10 @@
       "type": "featured-collection",
       "settings": {
         "title": "The best price today",
+        "sub_title": "The best price today",
+        "description": "There are many things are needed to start the Fast Food Business. You need not only Just Food Stalls with Persons but also specialized equipment, Skills to manage Customers,",
         "collection": "all",
-        "products_to_show": 4,
+        "products_to_show": 3,
         "show_view_all": true,
         "swipe_on_mobile": true,
         "image_ratio": "adapt",
