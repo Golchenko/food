@@ -1,5 +1,5 @@
 .about-us-section {
-  position: relative;
+  position: relative;  
   &::before {
     content: "";
     position: absolute;
@@ -11,6 +11,9 @@
     @media screen and (max-width: 749px) {
       content: none;
     }
+  }
+  .image-with-text__media img {
+    border-radius: 35px;
   }
   @media screen and (max-width: 540px) {
     .image-with-text__content {
