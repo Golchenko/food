@@ -4,6 +4,7 @@
   background-color: $color-white;
   .btn-card {
     text-decoration: none;
+    position: relative;
     @media screen and (max-width: 749px) {
       .button {
         padding: 0.5rem 1rem 0.5rem;

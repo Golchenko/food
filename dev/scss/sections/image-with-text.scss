@@ -1,0 +1,21 @@
+.about-us-section {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 707px;
+    height: 1300px;
+    background-image: url(side-blot.svg);
+    @media screen and (max-width: 749px) {
+      content: none;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .image-with-text__content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

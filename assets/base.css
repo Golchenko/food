@@ -1753,8 +1753,8 @@ input[type='checkbox'] {
 
 .cart-count-bubble {
   position: absolute;
-  background-color: rgb(var(--color-button));
-  color: rgb(var(--color-button-text));
+  background-color: #ffffff;
+  color: #DC780B;
   height: 1.7rem;
   width: 1.7rem;
   border-radius: 100%;
@@ -1762,8 +1762,8 @@ input[type='checkbox'] {
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  bottom: 0.8rem;
-  left: 2.2rem;
+  top: 3px;
+  right: 3px;
   line-height: 1.1;
 }
 
@@ -1830,7 +1830,7 @@ input[type='checkbox'] {
 .header-wrapper {
   display: block;
   position: relative;
-  background-color: rgb(var(--color-background));
+  background-color: #ffffff;
 }
 
 .header-wrapper--border-bottom {

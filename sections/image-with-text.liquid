@@ -1,5 +1,4 @@
 {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
-
 <div class="image-with-text {% if section.settings.full_width %}image-with-text--full-width{% else %}page-width{% endif %} color-scheme-{{ section.settings.color_scheme }}">
   <div class="image-with-text__grid color-{{ section.settings.color_scheme }} grid grid--gapless grid--1-col grid--2-col-tablet gradient{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
     <div class="grid__item">
@@ -32,9 +31,12 @@
         {%- for block in section.blocks -%}
           {% case block.type %}
             {%- when 'heading' -%}
-              <h2 class="image-with-text__heading h1" {{ block.shopify_attributes }}>
+              <h2 class="image-with-text__heading h1 uppercase" {{ block.shopify_attributes }}>
                 {{ block.settings.heading | escape }}
               </h2>
+              <p class="section-subheading h3">
+                {{ block.settings.sub_heading | escape }}
+              </p>
             {%- when 'text' -%}
               <div class="image-with-text__text rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
             {%- when 'button' -%}
@@ -53,7 +55,7 @@
 {% schema %}
 {
   "name": "t:sections.image-with-text.name",
-  "class": "spaced-section spaced-section--full-width",
+  "class": "spaced-section spaced-section--full-width about-us-section",
   "settings": [
     {
       "type": "image_picker",
@@ -135,8 +137,14 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Image with text",
+          "default": "About us",
           "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "text",
+          "id": "sub_heading",
+          "default": "Food Stalls with Persons but  to  Product marketing plane catlogues etc to.",
+          "label": "Section subheading"
         }
       ]
     },
@@ -148,7 +156,7 @@
         {
           "type": "richtext",
           "id": "text",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "default": "<p>There are many things are needed to start the Fast Food Business. You need not only Just Food Stalls with Persons but also equipment  make your marketing plane Effective.</p>",
           "label": "t:sections.image-with-text.blocks.text.settings.text.label"
         }
       ]
