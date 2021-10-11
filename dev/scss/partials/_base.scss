@@ -90,6 +90,9 @@ p {
   margin-right: auto;
   margin-bottom: 50px;
   text-align: center;
+  @media screen and (max-width: 740px) {
+    width: 90%;
+  }
 }
 
 .spr-icon,
