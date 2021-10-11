@@ -1,5 +1,7 @@
+
+
 <div class="page-width">
-    <div class="section-heading__wrapper">
+    <div class="reviews-slider__title-wrapper title-wrapper">
         {% if section.settings.title %}
             <h2 class="title uppercase">
                 {{ section.settings.title | escape }}
@@ -13,15 +15,19 @@
         {% endif %}
 
         {% if section.settings.description %}
-            <p class="section-description">
+            <p class="reviews-slider-description">
                 {{ section.settings.description | escape }}
             </p>
         {% endif %}
-
+    </div>
+    <div class="reviews-slider__slide-wrapper">
+        {% for product in collections['all'].products limit:10 %}
+            {% if product.metafields.spr.reviews %}
+                <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+            {% endif %}
+        {% endfor %}
     </div>
 </div>
-
-
 
 {% schema %}
 {

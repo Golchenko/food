@@ -50,7 +50,7 @@ h3,
 
 h3.h4,
 h4,
-.price span  {
+.price span {
   font-family: "Philosopher", sans-serif;
   font-size: 2.5rem !important;
   line-height: 3.5rem;
@@ -80,4 +80,20 @@ p {
     font-size: 1.3rem;
     line-height: 2rem;
   }
+}
+
+.title-wrapper {
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.spr-icon,
+.rating-star {
+  font-size: 2.4rem !important;
+  color: $color-orange !important;
 }
