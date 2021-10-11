@@ -1,15 +1,4 @@
 .featured-products {
-  .title-wrapper {
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-    p {
-      text-align: center;
-    }
-  }
   .media {
     img {
       border-radius: 76px 10px 76px 0px;
@@ -32,10 +21,6 @@
         width: 15px;
         height: 15px;
       }
-    }
-    .rating-star {
-      font-size: 2.4rem;
-      color: $color-orange !important;
     }
     .main-information {
       min-height: 7rem;

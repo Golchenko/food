@@ -1,0 +1,65 @@
+
+
+<div class="page-width">
+    <div class="reviews-slider__title-wrapper title-wrapper">
+        {% if section.settings.title %}
+            <h2 class="title uppercase">
+                {{ section.settings.title | escape }}
+            </h2>
+        {% endif %}
+
+        {% if section.settings.sub_title %}
+            <p class="h3">
+                {{ section.settings.sub_title | escape }}
+            </p>
+        {% endif %}
+
+        {% if section.settings.description %}
+            <p class="reviews-slider-description">
+                {{ section.settings.description | escape }}
+            </p>
+        {% endif %}
+    </div>
+    <div class="reviews-slider__slide-wrapper">
+        {% for product in collections['all'].products limit:10 %}
+            {% if product.metafields.spr.reviews %}
+                <div id="shopify-product-reviews" data-id="{{product.id}}">
+                    {{ product.metafields.spr.reviews }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Reviews slider",
+    "tag": "section",
+    "class": "reviews-slider",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Testimonial",
+            "label": "Section title"
+        },
+        {
+            "type": "text",
+            "id": "sub_title",
+            "default": "Making Food great again and again",
+            "label": "Section sub-title"
+        },
+        {
+            "type": "textarea",
+            "id": "description",
+            "default": "You need not only Just Food Stalls with Persons but also specialized equipment, Skills to manage Customers, Effective Product catlogues etc to make your.",
+            "label": "Section description"
+        }
+    ],
+    "presets": [
+    {
+      "name": "Reviews slider"
+    }
+  ]
+}
+{% endschema %}

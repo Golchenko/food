@@ -8,3 +8,13 @@ $("details").hover(
         $(this).attr('open', false);
     }
 );
+
+// -- review slider initialization -- //
+
+$('.reviews-slider__slide-wrapper').slick({
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+});
+
