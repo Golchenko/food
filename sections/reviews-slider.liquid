@@ -23,7 +23,9 @@
     <div class="reviews-slider__slide-wrapper">
         {% for product in collections['all'].products limit:10 %}
             {% if product.metafields.spr.reviews %}
-                <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+                <div id="shopify-product-reviews" data-id="{{product.id}}">
+                    {{ product.metafields.spr.reviews }}
+                </div>
             {% endif %}
         {% endfor %}
     </div>
