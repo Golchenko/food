@@ -162,6 +162,14 @@
         "color_scheme": "background-2",
         "full_width": true
       }
+    },
+    "16339651740f7e46bf": {
+      "type": "reviews-slider",
+      "settings": {
+        "title": "Testimonial",
+        "sub_title": "Making Food great again and again",
+        "description": "You need not only Just Food Stalls with Persons but also specialized equipment, Skills to manage Customers, Effective Product catlogues etc to make your."
+      }
     }
   },
   "order": [
@@ -169,6 +177,7 @@
     "multi_column",
     "163351198422092d5c",
     "featured_products",
-    "16335112465ca823b4"
+    "16335112465ca823b4",
+    "16339651740f7e46bf"
   ]
 }
