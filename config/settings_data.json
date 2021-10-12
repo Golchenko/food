@@ -44,7 +44,8 @@
           "logo_position": "middle-left",
           "menu": "main-menu",
           "show_line_separator": false,
-          "enable_sticky_header": true
+          "enable_sticky_header": true,
+          "disable_search": true
         }
       },
       "footer": {
@@ -53,29 +54,36 @@
           "footer-1": {
             "type": "text",
             "settings": {
-              "heading": "Heading",
-              "subtext": "<p><a href=\"https:\/\/www.company name.com\" target=\"_blank\" title=\"https:\/\/www.company name.com\">www.company name.com<\/a><\/p>"
+              "heading": "",
+              "subtext": "",
+              "logo": "shopify:\/\/shop_images\/FoodLogo.png",
+              "link": "www.company-name.com",
+              "mail": "companyname@gmail.com",
+              "phone": "+7 485-118-03-25"
             }
           },
           "footer-0": {
             "type": "link_list",
             "settings": {
               "heading": "Home",
-              "menu": "footer-home"
+              "menu": "footer-home",
+              "show_social": false
             }
           },
           "97816c6d-0c7b-42a5-88c7-c0494d4510e3": {
             "type": "link_list",
             "settings": {
               "heading": "Menu",
-              "menu": "main-menu"
+              "menu": "main-menu",
+              "show_social": false
             }
           },
           "8bd49e15-c813-47ee-8532-a3e533385f83": {
             "type": "link_list",
             "settings": {
               "heading": "Company",
-              "menu": "footer"
+              "menu": "footer",
+              "show_social": true
             }
           }
         },
@@ -89,7 +97,6 @@
           "color_scheme": "accent-2",
           "newsletter_enable": false,
           "newsletter_heading": "Subscribe to our emails",
-          "show_social": true,
           "enable_country_selector": false,
           "enable_language_selector": false,
           "payment_enable": false
