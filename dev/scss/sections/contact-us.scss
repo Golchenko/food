@@ -1,0 +1,41 @@
+.newsletter {
+  .newsletter-form__field-wrapper,
+  .newsletter-form {
+    max-width: 750px !important;
+  }
+  .newsletter-form {
+    margin-top: 40px;
+  }
+  .field__input {
+    box-shadow: none;
+    background: $color-white;
+    border-radius: 10px 0 0 10px;
+    height: 7.5rem;
+    padding-right: 1.5rem;
+  }
+  .field__label,
+  .field__button {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .newsletter-form__button {
+    background-color: $color-orange;
+    box-shadow: none;
+    width: 18.5rem;
+    font-size: 1.7rem;
+  }
+
+  @media screen and (max-width: 540px) {
+    .newsletter-form__button {
+        width: unset;
+        min-width: 7rem;
+        padding: 0.9rem 1rem 1.1rem;;
+    }
+    .field__input {
+        height: 5rem;
+    }
+    .field__label {
+        font-size: 1.3rem;
+    }
+  }
+}
