@@ -9,7 +9,11 @@
       </h1>
 
       {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
+        <div class="collection-hero__description rte">
+          <p>
+            {{ collection.description }}
+          </p>          
+        </div>
       {%- endif -%}
     </div>
 
@@ -32,6 +36,18 @@
         >
       </div>
     {%- endif -%}
+    
+    {% if section.settings.collection_list != blank %}
+      <div class="collection-hero__menu collection-menu">
+        <ul class="collection-menu__list list-menu list-menu--inline">
+          {%- for link in section.settings.collection_list.links -%}
+            <li class="collection-menu__item">
+                <a class="collection-menu__link inline-link" href="{{ link.url }}">{{ link.title | escape }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
   </div>
 </div>
 
@@ -56,6 +72,11 @@
       "default": false,
       "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
       "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "link_list",
+      "id": "collection_list",
+      "label": "Collections menu"
     }
   ]
 }
