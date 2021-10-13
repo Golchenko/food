@@ -22,6 +22,16 @@
   font-style: normal;
 }
 
+h1,
+h1 {
+  font-family: "Roboto-Medium", sans-serif;
+  font-size: 3.6rem;
+  letter-spacing: 0.8rem;
+  color: $color-orange;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 h2,
 .h2,
 .h1 {
@@ -57,10 +67,12 @@ h4,
   line-height: 3.5rem;
 }
 
-p {
+p,
+.inline-link {
   font-family: "Roboto-Regular", sans-serif;
   font-size: 1.6rem;
   line-height: 2.4rem;
+  color: $color-text-black;
 }
 
 .uppercase {

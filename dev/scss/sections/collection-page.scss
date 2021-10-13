@@ -1,0 +1,31 @@
+.collection-hero {
+  .collection-hero__inner {
+    margin-bottom: 5rem;
+    flex-direction: column;
+    .collection-hero__description {
+      margin: 50px auto 0;
+      p {
+        text-align: center;
+      }
+    }
+    .collection-hero__menu.collection-menu {
+      width: 100%;
+      text-align: center;
+      box-shadow: 0px 1px 28px 1px rgba(227, 227, 225, 0.6);
+      border-radius: 13px;
+      margin-top: 55px;
+      .collection-menu__item {
+        padding: 14px 37px;        
+        .collection-menu__link {
+          text-decoration: none;
+          color: $color-text-black;
+          padding: 17px 0;
+          &:hover {
+            color: $color-orange;
+            border-bottom: $color-orange 2px solid;
+          }
+        }
+      }
+    }
+  }
+}

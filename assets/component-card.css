@@ -178,7 +178,6 @@
 
 .card-information__wrapper > * {
   line-height: 1.4;
-  color: rgb(var(--color-foreground));
 }
 
 .card-information__wrapper > .price {

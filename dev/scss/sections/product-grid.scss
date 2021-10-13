@@ -1,4 +1,4 @@
-.featured-products {
+.grid__item {
   .media {
     img {
       border-radius: 76px 10px 76px 0px;
@@ -8,6 +8,9 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     border-radius: 75px 10px 10px 10px;
+    .card--product {
+      border: none;
+    }
   }
   .card-information__wrapper {
     display: flex;
@@ -32,6 +35,9 @@
       justify-content: space-between;
       .full-unstyled-link {
         text-decoration: none;
+      }
+      .card-information__short-description {
+        color: $color-text-black;
       }
     }
   }
