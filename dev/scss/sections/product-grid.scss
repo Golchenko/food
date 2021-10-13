@@ -36,6 +36,9 @@
       .full-unstyled-link {
         text-decoration: none;
       }
+      .card-information__short-description {
+        color: $color-text-black;
+      }
     }
   }
   @media screen and (min-width: 750px) {
