@@ -63,6 +63,7 @@
         },
         "dab4f463-533d-4cc5-b603-e1286bb763ed": {
           "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "disabled": true,
           "settings": {
           }
         },
@@ -93,6 +94,7 @@
         "3b5d190a-c140-441d-a430-823462f6fa1c"
       ],
       "settings": {
+        "image_slider": true,
         "enable_sticky_info": true,
         "hide_variants": false,
         "enable_video_looping": false
