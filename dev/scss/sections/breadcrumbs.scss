@@ -1,0 +1,11 @@
+.breadcrumb {
+    margin: 50px 0;
+    a, span {
+        color: $color-text-black;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    a:hover {
+        color: $color-orange;
+    }
+}

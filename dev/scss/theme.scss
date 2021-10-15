@@ -24,7 +24,7 @@
 // partials
 
 @import 'partials/base';
-// @import 'partials/type';
+@import 'partials/slick-basics';
 
 // --------------------------------------------------
 // sections
@@ -36,8 +36,17 @@
 @import 'sections/reviews-slider';
 @import 'sections/contact-us';
 @import 'sections/collection-page';
+@import 'sections/product-slider';
+@import 'sections/breadcrumbs';
 
 @import 'sections/footer';
+
+// --------------------------------------------------
+// pages
+
+@import 'pages/product'
+
+
 
 // --------------------------------------------------
 // snippets

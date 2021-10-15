@@ -1,0 +1,30 @@
+.product {
+  .product__media-wrapper {
+    .slick-list {
+      margin: 0 30px;
+    }
+    .slick-arrow {
+      width: 18px;
+      height: 39px;
+    }
+    .slick-prev {
+      background-image: url(arrow-left-big.svg);
+    }
+    .slick-next {
+      background-image: url(arrow-right-big.svg);
+    }
+    .product__media-item {
+      padding: 10px;
+    }
+  }
+  .product__slider {
+    .product__media {
+      height: 500px;
+    }
+  }
+  .product__thumbnail-slider {
+    .product__media {
+      height: 150px;
+    }
+  }
+}

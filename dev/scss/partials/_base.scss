@@ -51,7 +51,8 @@ h2.banner__heading {
 
 h3,
 .h3,
-.h3 p {
+.h3 p,
+h2.spr-header-title {
   font-family: "Philosopher", sans-serif;
   font-size: 3.1rem;
   line-height: 4.1rem;
@@ -61,14 +62,17 @@ h3,
 
 h3.h4,
 h4,
-.price span {
+.price span,
+h1.h4 {
   font-family: "Philosopher", sans-serif;
   font-size: 2.5rem !important;
   line-height: 3.5rem;
 }
 
 p,
-.inline-link {
+.inline-link,
+.product-form__input .form__label,
+p.spr-review-content-body {
   font-family: "Roboto-Regular", sans-serif;
   font-size: 1.6rem;
   line-height: 2.4rem;
