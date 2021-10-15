@@ -1,0 +1,20 @@
+{% if collection %}
+    {% assign product_collection = collection %}
+{% else %}
+    {% assign product_collection = product.collections.first %}
+{% endif %}
+
+{% unless product_collection == blank %}
+    <div class="product-hero"> </div>
+{% endunless %}
+
+<style>
+    .product-hero {
+        height: 120px;
+        width: 100%;
+        background-image: url({{ product_collection.image.src | collection_img_url: 'original' }});
+        background-position: center;
+        background-size: cover;
+        margin-bottom: calc(5rem + var(--page-width-margin));
+    }
+</style>

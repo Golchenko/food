@@ -18,54 +18,109 @@
   <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
+{% render 'product-hero' %}
+
 <section class="page-width">
+
+{% render 'breadcrumbs' %}
+
   <div class="product grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
-      <slider-component class="slider-mobile-gutter">
-        <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
-          {{ "accessibility.skip_to_product_info" | t }}
-        </a>
-        <ul class="product__media-list grid grid--peek list-unstyled slider slider--mobile" role="list">
-          {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
-          {%- if product.selected_or_first_available_variant.featured_media != null -%}
-            {%- assign media = product.selected_or_first_available_variant.featured_media -%}
-            <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-              {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
-            </li>
-          {%- endif -%}
-          {%- for media in product.media -%}
-            {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-              <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-                {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
+      {% if section.settings.image_slider %}      
+          <ul class="product__media-list grid--peek list-unstyled product__slider" role="list">
+            {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
+            {%- if product.selected_or_first_available_variant.featured_media != null -%}
+              {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+              <li class="product__media-item grid__item product-image{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
               </li>
-            {%- endunless -%}
-          {%- endfor -%}
-        </ul>
-        <div class="slider-buttons no-js-hidden{% if product.media.size < 2 %} small-hide{% endif %}">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
-            <span class="slider-counter--total">{% if section.settings.hide_variants %}{{ product.media.size | minus: variant_images.size | plus: 1 }}{% else %}{{ product.media.size }}{% endif %}</span>
+            {%- endif -%}
+            {%- for media in product.media -%}
+              {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+                <li class="product__media-item grid__item product-image{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                  {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
+                </li>
+              {%- endunless -%}
+            {%- endfor -%}
+          </ul>
+          <ul class="product__media-list list-unstyled product__thumbnail-slider" role="list">
+            {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
+            {%- if product.selected_or_first_available_variant.featured_media != null -%}
+              {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+              <li class="product__media-item product-image" data-media-id="{{ section.id }}-{{ media.id }}">
+                {% render 'product-thumbnails-custom', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
+              </li>
+            {%- endif -%}
+            {%- for media in product.media -%}
+              {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+                <li class="product__media-item product-image" data-media-id="{{ section.id }}-{{ media.id }}">
+                  {% render 'product-thumbnails-custom', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
+                </li>
+              {%- endunless -%}
+            {%- endfor -%}
+          </ul>
+      {% else %}
+        <slider-component class="slider-mobile-gutter">
+          <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
+            {{ "accessibility.skip_to_product_info" | t }}
+          </a>
+          <ul class="product__media-list grid grid--peek list-unstyled slider slider--mobile" role="list">
+            {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
+            {%- if product.selected_or_first_available_variant.featured_media != null -%}
+              {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+              <li class="product__media-item grid__item slider__slide product-image{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
+              </li>
+            {%- endif -%}
+            {%- for media in product.media -%}
+              {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+                <li class="product__media-item grid__item slider__slide product-image{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                  {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
+                </li>
+              {%- endunless -%}
+            {%- endfor -%}
+          </ul>
+          <div class="slider-buttons no-js-hidden{% if product.media.size < 2 %} small-hide{% endif %}">
+            <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+            <div class="slider-counter caption">
+              <span class="slider-counter--current">1</span>
+              <span aria-hidden="true"> / </span>
+              <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+              <span class="slider-counter--total">{% if section.settings.hide_variants %}{{ product.media.size | minus: variant_images.size | plus: 1 }}{% else %}{{ product.media.size }}{% endif %}</span>
+            </div>
+            <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
           </div>
-          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
+        </slider-component>
+        {%- if first_3d_model -%}
+          <button
+            class="button button--full-width product__xr-button"
+            type="button"
+            aria-label="{{ 'products.product.xr_button_label' | t }}"
+            data-shopify-xr
+            data-shopify-model3d-id="{{ first_3d_model.id }}"
+            data-shopify-title="{{ product.title | escape }}"
+            data-shopify-xr-hidden
+          >
+            {% render 'icon-3d-model' %}
+            {{ 'products.product.xr_button' | t }}
+          </button>
+        {%- endif -%}
+      {% endif %}
+
+      <div class="product__bottom">
+        {%- if product.description != blank -%}
+        <div class="product__description rte">
+          <p class="h3">Product description</p>
+          <p>{{ product.description }}</p>
         </div>
-      </slider-component>
-      {%- if first_3d_model -%}
-        <button
-          class="button button--full-width product__xr-button"
-          type="button"
-          aria-label="{{ 'products.product.xr_button_label' | t }}"
-          data-shopify-xr
-          data-shopify-model3d-id="{{ first_3d_model.id }}"
-          data-shopify-title="{{ product.title | escape }}"
-          data-shopify-xr-hidden
-        >
-          {% render 'icon-3d-model' %}
-          {{ 'products.product.xr_button' | t }}
-        </button>
       {%- endif -%}
+
+      {% if product.metafields.spr.reviews %}
+        <div class="product__reviews" id="shopify-product-reviews" data-id="{{product.id}}">
+          {{ product.metafields.spr.reviews }}
+        </div>
+      {% endif %}
+      </div>
     </div>
     <div class="product__info-wrapper grid__item">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
@@ -80,35 +135,28 @@
               {{- block.settings.text -}}
             </p>
           {%- when 'title' -%}
-            <h1 class="product__title" {{ block.shopify_attributes }}>
+            <h1 class="product__title h4" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
+            <p class="card-information__short-description">
+              {% if product.metafields.products.short_description %}
+                {{ product.metafields.products.short_description }}
+              {% else %}
+                A salad bar is a buffet-style table or for customers to assemble their own salad plates.
+              {% endif %}
+            </p>
           {%- when 'price' -%}
-            <div class="no-js-hidden" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
+            <div class="no-js-hidden product__price-block" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+              {%- render 'stars-rating' -%}
             </div>
-            {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-              <div class="product__tax caption rte">
-                {%- if shop.taxes_included -%}
-                  {{ 'products.product.include_taxes' | t }}
-                {%- endif -%}
-                {%- if shop.shipping_policy.body != blank -%}
-                  {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                {%- endif -%}
-              </div>
-            {%- endif -%}
             <div {{ block.shopify_attributes }}>
               {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 {{ form | payment_terms }}
               {%- endform -%}
             </div>
-          {%- when 'description' -%}
-            {%- if product.description != blank -%}
-              <div class="product__description rte">
-                {{ product.description }}
-              </div>
-            {%- endif -%}
+
           {%- when 'custom_liquid' -%}
             {{ block.settings.custom_liquid }}
           {%- when 'collapsible_tab' -%}
@@ -337,32 +385,11 @@
             </div>
 
             <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
-          {%- when 'rating' -%}
-            {%- if product.metafields.reviews.rating.value != blank -%}
-              {% liquid
-               assign rating_decimal = 0
-               assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
-               if decimal >= 0.3 and decimal <= 0.7
-                assign rating_decimal = 0.5
-              elsif decimal > 0.7
-                assign rating_decimal = 1
-               endif
-              %}
-              <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}">
-                <span aria-hidden="true" class="rating-star color-icon-{{ settings.accent_icons }}" style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
-              </div>
-              <p class="rating-text caption">
-                <span aria-hidden="true">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
-              </p>
-              <p class="rating-count caption">
-                <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
-                <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
-              </p>
-            {%- endif -%}
+          
           {%- endcase -%}
         {%- endfor -%}
       </div>
-    </div>
+    </div>   
   </div>
 
   <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
@@ -799,8 +826,14 @@
         }
       ]
     }
-  ],
+  ],   
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "image_slider",
+      "default": true,
+      "label": "Enable product image slider"
+    },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",

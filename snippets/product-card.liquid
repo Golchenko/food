@@ -31,7 +31,13 @@
         {% render 'price', product: product_card_product, price_class: '' %}
       </div>
 
-      <p class="card-information__short-description">{{ product_card_product.metafields.products.short_description }}</p>
+      <p class="card-information__short-description">
+        {% if product_card_product.metafields.products.short_description %}
+          {{ product_card_product.metafields.products.short_description }}
+        {% else %}
+          A salad bar is a buffet-style table or for customers to assemble their own salad plates.
+        {% endif %}
+      </p>
 
       <div class="card-information__row">
         <div class="card-information__button">

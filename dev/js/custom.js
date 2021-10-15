@@ -18,3 +18,23 @@ $('.reviews-slider__slide-wrapper').slick({
     slidesToShow: 1,
 });
 
+// -- product slider initialization -- //
+
+$('.product__slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    dots: false,
+    asNavFor: '.product__thumbnail-slider'
+  });
+  $('.product__thumbnail-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.product__slider',
+    // vertical: true,
+    // verticalSwiping: true,
+    dots: false,
+    arrows: false,
+    focusOnSelect: true
+  });
