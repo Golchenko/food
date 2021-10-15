@@ -28,3 +28,16 @@
     }
   }
 }
+
+@media screen and (max-width: 990px) {
+  .product__slider {
+    .product__media {
+      height: 300px !important;
+    }
+  }
+  .product__thumbnail-slider {
+    .product__media {
+      height: 80px !important;
+    }
+  }
+} 
