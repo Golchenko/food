@@ -1,6 +1,6 @@
 // -- open header menu on mouse over --//
 
-$("details").hover(
+$(".header-details").hover(
     function () {
         $(this).attr('open', true);
     },
