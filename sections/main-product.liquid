@@ -109,17 +109,15 @@
 
       <div class="product__bottom">
         {%- if product.description != blank -%}
-        <div class="product__description rte">
-          <p class="h3">Product description</p>
-          <p>{{ product.description }}</p>
-        </div>
-      {%- endif -%}
+          <div class="product__description rte">
+            <p class="h3">Product description</p>
+            <p>{{ product.description }}</p>
+          </div>
+        {%- endif -%}
 
-      {% if product.metafields.spr.reviews %}
         <div class="product__reviews" id="shopify-product-reviews" data-id="{{product.id}}">
           {{ product.metafields.spr.reviews }}
         </div>
-      {% endif %}
       </div>
     </div>
     <div class="product__info-wrapper grid__item">
